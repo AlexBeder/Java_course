@@ -1,4 +1,4 @@
-package package_lecture1p1;
+package zadanie2;
 
 public class CalculateDistance {
 
