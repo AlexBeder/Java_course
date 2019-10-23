@@ -1,11 +1,11 @@
-package new_package;
+package new_package.tests;
 
 import java.util.concurrent.TimeUnit;
 
+import new_package.model.ContactData;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.*;
 import org.openqa.selenium.*;
-import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class ContactCreationTests {
   private WebDriver wd;

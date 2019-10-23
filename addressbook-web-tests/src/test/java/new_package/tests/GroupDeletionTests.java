@@ -1,4 +1,4 @@
-package new_package;
+package new_package.tests;
 
 import org.testng.annotations.*;
 
@@ -6,10 +6,10 @@ public class GroupDeletionTests extends TestBase {
 
   @Test
   public void testGroupDeletion() throws Exception {
-    gotoGroupPage();
-    selectGroup();
-    clickDeleteButton();
-    returnToGroupPage();
+    app.gotoGroupPage();
+    app.selectGroup();
+    app.clickDeleteButton();
+    app.returnToGroupPage();
   }
 
 }
