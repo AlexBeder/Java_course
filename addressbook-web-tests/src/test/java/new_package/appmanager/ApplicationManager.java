@@ -4,10 +4,11 @@ import new_package.model.GroupData;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.internal.GroupsHelper;
 
 import java.util.concurrent.TimeUnit;
 
-public class ApplicationManager {
+public class ApplicationManager extends GroupHelper {
   private WebDriver wd;
 
   public void init() {
@@ -40,8 +41,6 @@ public class ApplicationManager {
 
   public void fillGroupCreationForm() {
     GroupData GroupParam = new GroupData("Test1", "Test2", "Test3");
-
-    wd.findElement(By.name("new")).click();
     wd.findElement(By.name("group_name")).click();
     wd.findElement(By.name("group_name")).clear();
     wd.findElement(By.name("group_name")).sendKeys(GroupParam.GroupName);
@@ -49,6 +48,10 @@ public class ApplicationManager {
     wd.findElement(By.name("group_header")).sendKeys(GroupParam.GroupHeader);
     wd.findElement(By.name("group_footer")).clear();
     wd.findElement(By.name("group_footer")).sendKeys(GroupParam.GroupFooter);
+  }
+
+  public void initGroupCreation() {
+    wd.findElement(By.name("new")).click();
   }
 
   public void gotoGroupPage() {
