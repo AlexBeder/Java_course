@@ -9,14 +9,11 @@ import org.openqa.selenium.*;
 
 public class GroupDeletionTests {
   private WebDriver wd;
-  private String baseUrl;
-  private boolean acceptNextAlert = true;
   private StringBuffer verificationErrors = new StringBuffer();
 
   @BeforeMethod(alwaysRun = true)
   public void setUp() throws Exception {
     wd = new ChromeDriver();
-    baseUrl = "https://www.katalon.com/";
     wd.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     login();
   }
@@ -58,10 +55,6 @@ public class GroupDeletionTests {
   @AfterMethod(alwaysRun = true)
   public void tearDown() throws Exception {
     wd.quit();
-    String verificationErrorString = verificationErrors.toString();
-    if (!"".equals(verificationErrorString)) {
-      fail(verificationErrorString);
-    }
   }
 
   private boolean isElementPresent(By by) {
@@ -82,18 +75,4 @@ public class GroupDeletionTests {
     }
   }
 
-  private String closeAlertAndGetItsText() {
-    try {
-      Alert alert = wd.switchTo().alert();
-      String alertText = alert.getText();
-      if (acceptNextAlert) {
-        alert.accept();
-      } else {
-        alert.dismiss();
-      }
-      return alertText;
-    } finally {
-      acceptNextAlert = true;
-    }
-  }
-}
+ }
