@@ -1,8 +1,8 @@
 package new_package.appmanager;
 
-import new_package.model.GroupData;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
+        import new_package.model.GroupData;
+        import org.openqa.selenium.By;
+        import org.openqa.selenium.WebDriver;
 
 public class GroupHelper {
   private WebDriver wd;
@@ -20,7 +20,7 @@ public class GroupHelper {
     wd.findElement(By.name("submit")).click();
   }
 
-  public void fillGroupCreationForm() {
+  public void fillGroupForm() {
     GroupData GroupParam = new GroupData("Test1", "Test2", "Test3");
     wd.findElement(By.name("group_name")).click();
     wd.findElement(By.name("group_name")).clear();
