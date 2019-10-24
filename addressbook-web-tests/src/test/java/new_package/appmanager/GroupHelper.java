@@ -4,7 +4,7 @@ package new_package.appmanager;
         import org.openqa.selenium.By;
         import org.openqa.selenium.WebDriver;
 
-public class GroupHelper {
+public class GroupHelper     {
   private WebDriver wd;
 
   public GroupHelper(WebDriver wd) {
