@@ -20,7 +20,7 @@ public class ApplicationManager {
     groupHelper = new GroupHelper(wd);
     navigationHelper = new NavigationHelper(wd);
     sessionHelper = new SessionHelper(wd);
-    sessionHelper.login();
+    sessionHelper.login("admin", "secret");
   }
 
 
