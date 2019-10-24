@@ -13,33 +13,40 @@ public class GroupHelper {
   }
 
   public void returnToGroupPage() {
-    wd.findElement(By.linkText("group page")).click();
+    click(By.linkText("group page"));
   }
 
   public void submitGrCrForm() {
-    wd.findElement(By.name("submit")).click();
+    click(By.name("submit"));
+  }
+
+  private void click(By locator) {
+    wd.findElement(locator).click();
   }
 
   public void fillGroupForm() {
     GroupData GroupParam = new GroupData("Test1", "Test2", "Test3");
-    wd.findElement(By.name("group_name")).click();
-    wd.findElement(By.name("group_name")).clear();
-    wd.findElement(By.name("group_name")).sendKeys(GroupParam.GroupName);
-    wd.findElement(By.name("group_header")).clear();
-    wd.findElement(By.name("group_header")).sendKeys(GroupParam.GroupHeader);
-    wd.findElement(By.name("group_footer")).clear();
-    wd.findElement(By.name("group_footer")).sendKeys(GroupParam.GroupFooter);
+    type(By.name("group_name"), GroupParam.GroupName);
+    type(By.name("group_header"), GroupParam.GroupHeader);
+    type(By.name("group_footer"), GroupParam.GroupFooter);
+
+  }
+
+  private void type(By locator, String text) {
+    click(locator);
+    wd.findElement(locator).clear();
+    wd.findElement(locator).sendKeys(text);
   }
 
   public void initGroupCreation() {
-    wd.findElement(By.name("new")).click();
+    click(By.name("new"));
   }
 
   public void clickDeleteButton() {
-    wd.findElement(By.xpath("(//input[@name='delete'])[2]")).click();
+    click(By.xpath("(//input[@name='delete'])[2]"));
   }
 
   public void selectGroup() {
-    wd.findElement(By.name("selected[]")).click();
+    click(By.name("selected[]"));
   }
 }
