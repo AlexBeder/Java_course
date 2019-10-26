@@ -1,6 +1,4 @@
-package package_lecture1p1;
-
-import java.awt.*;
+package java_practice;
 
 public class HelloWorld {
 

@@ -1,4 +1,4 @@
-package package_lecture1p1;
+package java_practice;
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
