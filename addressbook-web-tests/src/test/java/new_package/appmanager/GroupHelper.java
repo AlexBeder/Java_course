@@ -32,6 +32,7 @@ public class GroupHelper extends HelperBase {
   }
 
   public void clickDeleteButton() {
+
     click(By.xpath("(//input[@name='delete'])[2]"));
   }
 
@@ -44,6 +45,6 @@ public class GroupHelper extends HelperBase {
   }
 
   public void submitGroupModification() {
-click(By.name("update"));
+    click(By.name("update"));
   }
 }
