@@ -26,13 +26,12 @@ public class ApplicationManager {
   }
 
 
-
   public void logout() {
-   wd.findElement(By.linkText("Logout")).click();
+    wd.findElement(By.linkText("Logout")).click();
   }
 
   public void stop() {
-   wd.quit();
+    wd.quit();
   }
 
   public GroupHelper getGroupHelper() {

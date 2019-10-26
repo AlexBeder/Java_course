@@ -3,10 +3,10 @@ package new_package.appmanager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class NavigationHelper extends HelperBase{
+public class NavigationHelper extends HelperBase {
 
   public NavigationHelper(WebDriver wd) {
-    super (wd);
+    super(wd);
   }
 
   public void gotoGroupPage() {
@@ -15,6 +15,6 @@ public class NavigationHelper extends HelperBase{
   }
 
   public void gotoContactPage() {
-   click(By.linkText("add new"));
- }
+    click(By.linkText("add new"));
+  }
 }
