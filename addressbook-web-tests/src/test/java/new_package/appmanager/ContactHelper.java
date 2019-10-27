@@ -20,13 +20,12 @@ public class ContactHelper extends HelperBase {
   }
 
 
-  public void fillContactDetails() {
-    ContactData ContactParam = new ContactData("Sasha", "Test", "Adres", "704 home tel", "test@test.com");
-    type(By.name("firstname"), ContactParam.FirstName);
-    type(By.name("lastname"), ContactParam.LastName);
-    type(By.name("address"), ContactParam.Address);
-    type(By.name("home"), ContactParam.HomeTel);
-    type(By.name("email"), ContactParam.Email);
+  public void fillContactDetails(ContactData contactData) {
+    type(By.name("firstname"), contactData.FirstName);
+    type(By.name("lastname"), contactData.LastName);
+    type(By.name("address"), contactData.Address);
+    type(By.name("home"), contactData.HomeTel);
+    type(By.name("email"), contactData.Email);
   }
 
   public void selectContact() {

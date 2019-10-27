@@ -19,11 +19,10 @@ public class GroupHelper extends HelperBase {
     click(By.name("submit"));
   }
 
-  public void fillGroupForm() {
-    GroupData GroupParam = new GroupData("Test1", "Test2", "Test3");
-    type(By.name("group_name"), GroupParam.GroupName);
-    type(By.name("group_header"), GroupParam.GroupHeader);
-    type(By.name("group_footer"), GroupParam.GroupFooter);
+  public void fillGroupForm(GroupData groupData) {
+    type(By.name("group_name"), groupData.GroupName);
+    type(By.name("group_header"), groupData.GroupHeader);
+    type(By.name("group_footer"), groupData.GroupFooter);
 
   }
 
