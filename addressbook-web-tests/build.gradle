@@ -1,6 +1,8 @@
 apply plugin: 'java'
 
-
+test {
+    useTestNG()
+}
 
 repositories{
     mavenCentral()
