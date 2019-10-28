@@ -34,4 +34,8 @@ public class HelperBase {
       return false;
     }
   }
+
+  public boolean isThereARecord() {
+    return isElementPresent(By.name("selected[]"));
+  }
 }

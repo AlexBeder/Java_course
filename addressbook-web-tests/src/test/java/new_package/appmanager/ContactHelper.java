@@ -2,13 +2,13 @@ package new_package.appmanager;
 
 import new_package.model.ContactData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 
 public class ContactHelper extends HelperBase {
+
 
   public ContactHelper(WebDriver wd) {
     super(wd);
@@ -48,7 +48,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public void initEditContact() {
-    click(By.xpath("(.//img[@alt='Edit'])[2]"));
+    click(By.cssSelector("img[alt=\"Edit\"]"));
   }
 
   public void updateContactForm() {
@@ -62,4 +62,13 @@ public class ContactHelper extends HelperBase {
   public void confirmDeletion() {
     wd.switchTo().alert().accept();
   }
+
+  public void createContact(ContactData contact, boolean creation) {
+    NavigationHelper nv = new NavigationHelper(wd);
+    nv.initContactCreation();
+    fillContactForm((contact),true);
+    submitContactForm();
+    gotoHomePage();
+  }
+
 }
