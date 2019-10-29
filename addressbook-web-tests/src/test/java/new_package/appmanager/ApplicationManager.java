@@ -32,10 +32,10 @@ public class ApplicationManager {
     }
     wd.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/index.php");
-    contactHelper = new ContactHelper(wd);
-    groupHelper = new GroupHelper(wd);
-    navigationHelper = new NavigationHelper(wd);
-    sessionHelper = new SessionHelper(wd);
+    contactHelper = new ContactHelper(this);
+    groupHelper = new GroupHelper(this);
+    navigationHelper = new NavigationHelper(this);
+    sessionHelper = new SessionHelper(this);
     sessionHelper.login("admin", "secret");
   }
 

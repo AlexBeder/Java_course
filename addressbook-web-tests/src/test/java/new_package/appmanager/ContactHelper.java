@@ -10,8 +10,8 @@ import org.testng.Assert;
 public class ContactHelper extends HelperBase {
 
 
-  public ContactHelper(WebDriver wd) {
-    super(wd);
+  public ContactHelper(ApplicationManager app) {
+    super(app);
   }
 
   public void gotoHomePage() {
@@ -64,8 +64,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public void createContact(ContactData contact, boolean creation) {
-    NavigationHelper nv = new NavigationHelper(wd);
-    nv.initContactCreation();
+    app.getNavigationHelper().initContactCreation();
     fillContactForm((contact),true);
     submitContactForm();
     gotoHomePage();

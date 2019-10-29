@@ -5,10 +5,12 @@ import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 
 public class HelperBase {
+  public ApplicationManager app;
   protected WebDriver wd;
 
-  public HelperBase(WebDriver wd) {
-    this.wd = wd;
+  public HelperBase(ApplicationManager app) {
+    this.app = app;
+    this.wd = app.wd;
   }
 
   protected void click(By locator) {

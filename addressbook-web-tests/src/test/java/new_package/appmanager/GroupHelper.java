@@ -7,8 +7,8 @@ import org.openqa.selenium.WebDriver;
 
 public class GroupHelper extends HelperBase {
 
-  public GroupHelper(WebDriver wd) {
-    super(wd);
+  public GroupHelper(ApplicationManager app) {
+    super(app);
 
   }
 
