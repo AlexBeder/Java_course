@@ -51,12 +51,9 @@ public class ApplicationManager {
   public GroupHelper getGroupHelper() {
     return groupHelper;
   }
-
-
   public ContactHelper getContactHelper() {
     return contactHelper;
   }
-
   public NavigationHelper getNavigationHelper() {
     return navigationHelper;
   }
