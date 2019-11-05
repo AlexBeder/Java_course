@@ -2,7 +2,6 @@ package new_package.appmanager;
 
 import new_package.model.GroupData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 
 
 public class GroupHelper extends HelperBase {
