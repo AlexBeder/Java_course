@@ -30,7 +30,7 @@ public class ApplicationManager {
     } else {
       wd = new EdgeDriver();
     }
-    wd.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+    wd.manage().timeouts().implicitlyWait(3, TimeUnit.SECONDS);
     wd.get("http://localhost/addressbook/index.php");
     contactHelper = new ContactHelper(this);
     groupHelper = new GroupHelper(this);
