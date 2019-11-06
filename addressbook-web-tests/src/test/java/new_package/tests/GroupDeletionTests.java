@@ -4,6 +4,8 @@ import new_package.model.GroupData;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import java.util.List;
+
 public class GroupDeletionTests extends TestBase {
 
   @Test
@@ -12,12 +14,12 @@ public class GroupDeletionTests extends TestBase {
     if (! app.getGroupHelper().isThereARecord()){
       app.getGroupHelper().createGroup(new GroupData("Test1", "testik2", "Testik3"));
     }
-    int before = app.getGroupHelper().getGroupCount();
-    app.getGroupHelper().selectGroup(before - 1);
+    List<GroupData> before = app.getGroupHelper().getGroupList();
+    app.getGroupHelper().selectGroup(before.size() - 1);
     app.getGroupHelper().clickDeleteButton();
     app.getGroupHelper().returnToGroupPage();
-    int after = app.getGroupHelper().getGroupCount();
-    Assert.assertEquals(after, before - 1);
+    List<GroupData> after = app.getGroupHelper().getGroupList();
+    Assert.assertEquals(after.size(), before.size() - 1);
   }
 
 }

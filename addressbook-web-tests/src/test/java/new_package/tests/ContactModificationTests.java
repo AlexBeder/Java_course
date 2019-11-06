@@ -4,6 +4,8 @@ import new_package.model.ContactData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.List;
+
 public class ContactModificationTests extends TestBase {
 
   @Test
@@ -11,14 +13,14 @@ public class ContactModificationTests extends TestBase {
     if (!app.getContactHelper().isThereARecord()) {
       app.getContactHelper().createContact(new ContactData("Name", "Familiya", "Adres", "704","@gmail.com", "[none]"), true);
     }
-    int before = app.getContactHelper().getContactCount();
-    app.getContactHelper().selectContact(before - 1);
+    List<ContactData> before = app.getContactHelper().getContactList();
+    app.getContactHelper().selectContact(before.size());
     app.getContactHelper().initEditContact();
     app.getContactHelper().fillContactForm(new ContactData("Imya", "Familiya", "Adres", "704", "@gmail.com", null), false);
     app.getContactHelper().updateContactForm();
     app.getContactHelper().gotoHomePage();
-    int after = app.getContactHelper().getContactCount();
-    Assert.assertEquals(after, before);
+    List<ContactData> after = app.getContactHelper().getContactList();
+    Assert.assertEquals(after.size(), before.size());
     app.logout();
   }
 
