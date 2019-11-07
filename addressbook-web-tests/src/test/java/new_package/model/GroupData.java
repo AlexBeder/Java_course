@@ -8,8 +8,10 @@ public class GroupData {
   public String GroupHeader;
   public String GroupFooter;
 
+
+
   public GroupData (String GroupName, String GroupHeader, String GroupFooter){
-    this.id=0;
+    this.id=Integer.MAX_VALUE;
     this.GroupName = GroupName;
     this.GroupHeader = GroupHeader;
     this.GroupFooter = GroupFooter;
@@ -31,27 +33,24 @@ public class GroupData {
   }
 
   @Override
-  public boolean equals(Object o) {
-    if (this == o) return true;
-    if (o == null || getClass() != o.getClass()) return false;
-    GroupData groupData = (GroupData) o;
-    return id == groupData.id &&
-            Objects.equals(GroupName, groupData.GroupName);
-  }
-
-  @Override
-  public int hashCode() {
-    return Objects.hash(id, GroupName);
-  }
-
-  @Override
   public String toString() {
     return "GroupData{" +
             "id='" + id + '\'' +
             ", GroupName='" + GroupName + '\'' +
             '}';
   }
+  @Override
+  public boolean equals(Object o) {
+    if (this == o) return true;
+    if (o == null || getClass() != o.getClass()) return false;
+    GroupData groupData = (GroupData) o;
+    return Objects.equals(GroupName, groupData.GroupName);
+  }
 
+  @Override
+  public int hashCode() {
+    return Objects.hash(GroupName);
+  }
 
 
 

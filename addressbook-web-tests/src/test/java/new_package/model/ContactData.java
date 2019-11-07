@@ -33,7 +33,7 @@ public class ContactData {
 
 
   public ContactData (String FirstName, String LastName, String Address, String HomeTel, String Email, String Group) { this.FirstName = FirstName;
-    this.id=0;
+    this.id=Integer.MAX_VALUE;
     this.FirstName = FirstName;
     this.LastName = LastName;
     this.Address = Address;
@@ -47,14 +47,13 @@ public class ContactData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
-    return Objects.equals(id, that.id) &&
-            Objects.equals(FirstName, that.FirstName) &&
+    return Objects.equals(FirstName, that.FirstName) &&
             Objects.equals(LastName, that.LastName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, FirstName, LastName);
+    return Objects.hash(FirstName, LastName);
   }
 
   @Override
