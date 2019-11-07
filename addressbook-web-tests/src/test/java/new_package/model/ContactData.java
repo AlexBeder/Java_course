@@ -3,7 +3,7 @@ package new_package.model;
 import java.util.Objects;
 
 public class ContactData {
-  public String id;
+  public int id;
   public String FirstName;
   public String LastName;
   public String Address;
@@ -12,11 +12,15 @@ public class ContactData {
   private String group;
 
 
-  public String getId() {
+  public int getId() {
     return id;
   }
 
-  public ContactData (String id, String FirstName, String LastName, String Address, String HomeTel, String Email, String Group) { this.FirstName = FirstName;
+  public void setId(int id) {
+    this.id = id;
+  }
+
+  public ContactData (int id, String FirstName, String LastName, String Address, String HomeTel, String Email, String Group) { this.FirstName = FirstName;
   this.id=id;
   this.FirstName = FirstName;
   this.LastName = LastName;
@@ -25,8 +29,11 @@ public class ContactData {
   this.Email = Email;
   this.group = Group;
   }
+
+
+
   public ContactData (String FirstName, String LastName, String Address, String HomeTel, String Email, String Group) { this.FirstName = FirstName;
-    this.id=null;
+    this.id=0;
     this.FirstName = FirstName;
     this.LastName = LastName;
     this.Address = Address;
