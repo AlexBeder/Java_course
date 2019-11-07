@@ -51,8 +51,8 @@ public class ContactHelper extends HelperBase {
 
   }
 
-  public void initEditContact() {
-    click(By.cssSelector("img[alt=\"Edit\"]"));
+  public void initEditContact(int index) {
+    wd.findElements(By.cssSelector("img[alt=\"Edit\"]")).get(index).click();
   }
 
   public void updateContactForm() {
