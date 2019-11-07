@@ -4,6 +4,7 @@ import new_package.model.ContactData;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.util.Comparator;
 import java.util.HashSet;
 import java.util.List;
 
@@ -12,7 +13,7 @@ public class ContactModificationTests extends TestBase {
   @Test
   public void testContactModification() {
     if (!app.getContactHelper().isThereARecord()) {
-      app.getContactHelper().createContact(new ContactData("Name", null, null, null, null, null), true);
+      app.getContactHelper().createContact(new ContactData("Name", "familiya", "address", "tel", "email", "[none]"), true);
     }
     List<ContactData> before = app.getContactHelper().getContactList();
     app.getContactHelper().selectContact(before.size()-1);
@@ -27,7 +28,10 @@ public class ContactModificationTests extends TestBase {
 
     before.remove(before.size() - 1);
     before.add(contact);
-    Assert.assertEquals(new HashSet<Object> (before), new HashSet<Object>(after));
+    Comparator<? super ContactData> ById = (c1, c2) -> Integer.compare(c1.getId(), c2.getId());
+    before.sort(ById);
+    after.sort(ById);
+    Assert.assertEquals(before, after);
 
     app.logout();
   }
