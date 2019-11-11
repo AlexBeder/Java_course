@@ -1,12 +1,10 @@
 package new_package.tests;
 
 import new_package.model.ContactData;
-import new_package.model.GroupData;
 import org.testng.Assert;
-import org.testng.annotations.*;
+import org.testng.annotations.Test;
 
 import java.util.Comparator;
-import java.util.HashSet;
 import java.util.List;
 
 public class ContactCreationTests extends TestBase {
@@ -28,7 +26,7 @@ public class ContactCreationTests extends TestBase {
     after.sort(ById);
     Assert.assertEquals(before, after);
 
-    app.logout();
+   // app.getSessionHelper().logout();
   }
 
 
