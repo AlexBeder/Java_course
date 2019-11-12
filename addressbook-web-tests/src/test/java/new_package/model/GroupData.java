@@ -3,33 +3,33 @@ package new_package.model;
 import java.util.Objects;
 
 public class GroupData {
-  public int id;
+  public int id = Integer.MAX_VALUE;
   public String GroupName;
   public String GroupHeader;
   public String GroupFooter;
-
-
-
-  public GroupData (String GroupName, String GroupHeader, String GroupFooter){
-    this.id=Integer.MAX_VALUE;
-    this.GroupName = GroupName;
-    this.GroupHeader = GroupHeader;
-    this.GroupFooter = GroupFooter;
-  }
-
-  public GroupData (int id, String GroupName, String GroupHeader, String GroupFooter){
-    this.id=id;
-    this.GroupName = GroupName;
-    this.GroupHeader = GroupHeader;
-    this.GroupFooter = GroupFooter;
-  }
 
   public int getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public GroupData withId(int id) {
     this.id = id;
+    return this;
+  }
+
+  public GroupData withGroupName(String groupName) {
+    GroupName = groupName;
+    return this;
+  }
+
+  public GroupData withGroupHeader(String groupHeader) {
+    GroupHeader = groupHeader;
+    return this;
+  }
+
+  public GroupData withGroupFooter(String groupFooter) {
+    GroupFooter = groupFooter;
+    return this;
   }
 
   @Override

@@ -3,7 +3,7 @@ package new_package.model;
 import java.util.Objects;
 
 public class ContactData {
-  public int id;
+  public int id = Integer.MAX_VALUE;
   public String FirstName;
   public String LastName;
   public String Address;
@@ -16,30 +16,44 @@ public class ContactData {
     return id;
   }
 
-  public void setId(int id) {
+  public String getGroup() {
+    return group;
+  }
+
+
+  public ContactData withId(int id) {
     this.id = id;
+    return this;
   }
 
-  public ContactData (int id, String FirstName, String LastName, String Address, String HomeTel, String Email, String Group) { this.FirstName = FirstName;
-  this.id=id;
-  this.FirstName = FirstName;
-  this.LastName = LastName;
-  this.Address = Address;
-  this.HomeTel = HomeTel;
-  this.Email = Email;
-  this.group = Group;
+  public ContactData withGroup(String group) {
+    this.group = group;
+    return this;
   }
 
+  public ContactData withFirstName(String firstName) {
+    FirstName = firstName;
+    return this;
+  }
 
+  public ContactData withLastName(String lastName) {
+    LastName = lastName;
+    return this;
+  }
 
-  public ContactData (String FirstName, String LastName, String Address, String HomeTel, String Email, String Group) { this.FirstName = FirstName;
-    this.id=Integer.MAX_VALUE;
-    this.FirstName = FirstName;
-    this.LastName = LastName;
-    this.Address = Address;
-    this.HomeTel = HomeTel;
-    this.Email = Email;
-    this.group = Group;
+  public ContactData withAddress(String address) {
+    Address = address;
+    return this;
+  }
+
+  public ContactData withHomeTel(String homeTel) {
+    HomeTel = homeTel;
+    return this;
+  }
+
+  public ContactData withEmail(String email) {
+    Email = email;
+    return this;
   }
 
   @Override
@@ -65,9 +79,5 @@ public class ContactData {
             '}';
   }
 
-
-
-  public String getGroup() {
-    return group;
-  }
 }
+
