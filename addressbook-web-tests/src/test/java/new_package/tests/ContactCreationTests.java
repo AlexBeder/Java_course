@@ -11,13 +11,11 @@ public class ContactCreationTests extends TestBase {
 
   @Test
   public void testContactCreation() throws Exception {
-    List<ContactData> before = app.getContactHelper().getContactList();
-    app.getNavigationHelper().initContactCreation();
+    List<ContactData> before = app.contact().list();
+    app.goTo().contactCreation();
     ContactData contact = new ContactData("Name", "Familiya", "Adres", "704","@gmail.com", "[none]");
-    app.getContactHelper().fillContactForm(contact, true);
-    app.getContactHelper().submitContactForm();
-    app.getContactHelper().gotoHomePage();
-    List<ContactData> after = app.getContactHelper().getContactList();
+    app.contact().create(contact);
+    List<ContactData> after = app.contact().list();
     Assert.assertEquals(after.size(), before.size() + 1);
 
     before.add(contact);
@@ -28,6 +26,5 @@ public class ContactCreationTests extends TestBase {
 
    // app.getSessionHelper().logout();
   }
-
 
 }

@@ -2,7 +2,6 @@ package new_package.appmanager;
 
 import new_package.model.ContactData;
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
@@ -68,7 +67,7 @@ public class ContactHelper extends HelperBase {
   }
 
   public void createContact(ContactData contact, boolean creation) {
-    app.getNavigationHelper().initContactCreation();
+    app.goTo().contactCreation();
     fillContactForm((contact),true);
     submitContactForm();
     gotoHomePage();
@@ -78,7 +77,7 @@ public class ContactHelper extends HelperBase {
     return wd.findElements(By.name("selected[]")).size();
   }
 
-  public List<ContactData> getContactList() {
+  public List<ContactData> list() {
     List<ContactData> contacts = new ArrayList<ContactData>();
     List<WebElement> elements = wd.findElements(By.xpath("//*[@name='entry']"));
     for (WebElement element : elements){
@@ -90,12 +89,21 @@ public class ContactHelper extends HelperBase {
     }
     return contacts;
   }
-  public void modifyContact(int index, ContactData contact) {
+  public void modify(int index, ContactData contact) {
     selectContact(index);
     initEditContact(index);
     fillContactForm(contact, false);
     updateContactForm();
     gotoHomePage();
   }
-
+  public void delete(int index) {
+    selectContact(index);
+    initContactDeletion();
+    confirmDeletion();
+  }
+  public void create(ContactData contact) {
+    app.contact().fillContactForm(contact, true);
+    app.contact().submitContactForm();
+    app.contact().gotoHomePage();
+  }
 }
