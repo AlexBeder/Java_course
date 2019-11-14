@@ -1,6 +1,7 @@
 package new_package.appmanager;
 
 import new_package.model.ContactData;
+import new_package.model.Contacts;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -106,8 +107,8 @@ public class ContactHelper extends HelperBase {
     }
     return contacts;
   }
-  public Set<ContactData> all() {
-    Set<ContactData> contacts = new HashSet<ContactData>();
+  public Contacts all() {
+    Contacts contacts = new Contacts();
     List<WebElement> elements = wd.findElements(By.xpath("//*[@name='entry']"));
     for (WebElement element : elements){
       String firstname = element.findElement(By.xpath(".//td[3]")).getText();
