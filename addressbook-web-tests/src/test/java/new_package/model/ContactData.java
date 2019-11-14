@@ -61,13 +61,14 @@ public class ContactData {
     if (this == o) return true;
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
-    return Objects.equals(FirstName, that.FirstName) &&
+    return id == that.id &&
+            Objects.equals(FirstName, that.FirstName) &&
             Objects.equals(LastName, that.LastName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(FirstName, LastName);
+    return Objects.hash(id, FirstName, LastName);
   }
 
   @Override

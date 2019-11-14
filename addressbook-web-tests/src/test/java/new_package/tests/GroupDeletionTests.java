@@ -6,6 +6,7 @@ import org.testng.annotations.*;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 public class GroupDeletionTests extends TestBase {
   @BeforeMethod
@@ -18,16 +19,13 @@ public class GroupDeletionTests extends TestBase {
 
   @Test
   public void testGroupDeletion() throws Exception {
-    List<GroupData> before = app.group().list();
-    int index = before.size() - 1;
-    app.group().delete(index);
-    List<GroupData> after = app.group().list();
-    Assert.assertEquals(after.size(), index);
+    Set<GroupData> before = app.group().all();
+    GroupData deletedGroup = before.iterator().next();
+    app.group().delete(deletedGroup);
+    Set<GroupData> after = app.group().all();
+    Assert.assertEquals(after.size(), before.size() - 1);
 
-    before.remove(index);
-    Comparator<? super GroupData> ById = (g1, g2) -> Integer.compare(g1.getId(), g2.getId());
-    before.sort(ById);
-    after.sort(ById);
+    before.remove(deletedGroup);
     Assert.assertEquals(before, after);
    }
 

@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import java.util.Comparator;
 import java.util.List;
+import java.util.Set;
 
 public class ContactModificationTests extends TestBase {
   @BeforeMethod
@@ -19,19 +20,16 @@ public class ContactModificationTests extends TestBase {
 
   @Test
   public void testContactModification() {
-    List<ContactData> before = app.contact().list();
-    int index = before.size()-1;
+    Set<ContactData> before = app.contact().all();
+    ContactData modifiedContact = before.iterator().next();
     ContactData contact = new ContactData()
-                  .withId(before.get(index).getId()).withFirstName("Name").withLastName("Familiya").withAddress("Adres").withHomeTel("704").withEmail("@gmail.com");
-    app.contact().modify(index, contact);
-    List<ContactData> after = app.contact().list();
+                  .withId(modifiedContact.getId()).withFirstName("Name").withLastName("Familiya").withAddress("Adres").withHomeTel("704").withEmail("@gmail.com");
+    app.contact().modify(contact);
+    Set<ContactData> after = app.contact().all();
     Assert.assertEquals(after.size(), before.size());
 
-    before.remove(index);
+    before.remove(modifiedContact);
     before.add(contact);
-    Comparator<? super ContactData> ById = (c1, c2) -> Integer.compare(c1.getId(), c2.getId());
-    before.sort(ById);
-    after.sort(ById);
     Assert.assertEquals(before, after);
 
    // app.getSessionHelper().logout();
