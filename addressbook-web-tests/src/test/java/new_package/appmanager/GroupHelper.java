@@ -79,6 +79,9 @@ public class GroupHelper extends HelperBase {
     returnToGroupPage();
   }
 
+  public int count() {
+    return wd.findElements(By.name("selected[]")).size();
+ }
 
   public List<GroupData> list() {
     List<GroupData> groups = new ArrayList<GroupData>();
@@ -113,11 +116,6 @@ public class GroupHelper extends HelperBase {
 }
 
 //OLD code:
-
-//  public int getGroupCount() {
-//    return wd.findElements(By.name("selected[]")).size();
-//  }
-
 //  public void delete(int index) {
 //    selectGroup(index);
 //    clickDeleteButton();

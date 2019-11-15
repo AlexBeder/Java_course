@@ -2,6 +2,7 @@ package new_package.tests;
 
 import new_package.model.GroupData;
 import new_package.model.Groups;
+import org.hamcrest.CoreMatchers;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -26,8 +27,8 @@ public class GroupModificationTests extends TestBase {
     GroupData group = new GroupData()
             .withId(modifiedGroup.getId()).withGroupName("Testik").withGroupHeader("testik2").withGroupFooter("Testik3");
     app.group().modify(group);
+    assertThat(app.group().count(), equalTo(before.size()));
     Groups after = app.group().all();
-    assertThat(after.size(), equalTo(before.size()));
 
     assertThat(after, equalTo(before.without(modifiedGroup).withAdded(group)));
 
