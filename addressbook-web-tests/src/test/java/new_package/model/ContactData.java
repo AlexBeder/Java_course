@@ -8,6 +8,8 @@ public class ContactData {
   public String LastName;
   public String Address;
   public String HomeTel;
+  public String Mobile;
+  private String Work;
   public String Email;
   private String group;
 
@@ -48,6 +50,14 @@ public class ContactData {
 
   public ContactData withHomeTel(String homeTel) {
     HomeTel = homeTel;
+    return this;
+  }
+  public ContactData withMobile(String mobile) {
+    Mobile = mobile;
+    return this;
+  }
+  public ContactData withWork(String work) {
+    Work = work;
     return this;
   }
 

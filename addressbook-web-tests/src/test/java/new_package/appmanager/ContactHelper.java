@@ -8,9 +8,7 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 public class ContactHelper extends HelperBase {
@@ -96,6 +94,18 @@ public class ContactHelper extends HelperBase {
     app.contact().gotoHomePage();
   }
 
+  public ContactData infoFromEditForm(ContactData contact) {
+    initEditContactById(contact.getId());
+    String firstname = wd.findElement(By.name("firstname")).getAttribute("value");
+    String lastname = wd.findElement(By.name("lastname")).getAttribute("value");
+    String home = wd.findElement(By.name("home")).getAttribute("value");
+    String mobile = wd.findElement(By.name("mobile")).getAttribute("value");
+    String work = wd.findElement(By.name("work")).getAttribute("value");
+    wd.navigate().back();
+    return new ContactData()
+            .withId(contact.getId()).withFirstName(firstname).withLastName(lastname).withHomeTel(home).withMobile(mobile).withWork(work);
+
+  }
   public List<ContactData> list() {
     List<ContactData> contacts = new ArrayList<ContactData>();
     List<WebElement> elements = wd.findElements(By.xpath("//*[@name='entry']"));
@@ -118,7 +128,6 @@ public class ContactHelper extends HelperBase {
     }
     return contacts;
   }
-
 
 }
 
