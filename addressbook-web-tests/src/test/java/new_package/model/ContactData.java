@@ -12,6 +12,11 @@ public class ContactData {
   public String Work;
   public String Email;
   private String group;
+  public String AllPhones;
+
+  public String getAllPhones() {
+    return AllPhones;
+  }
 
   public String getHomeTel() {
     return HomeTel;
@@ -49,6 +54,8 @@ public class ContactData {
     return this;
   }
 
+
+
   public ContactData withLastName(String lastName) {
     LastName = lastName;
     return this;
@@ -56,6 +63,11 @@ public class ContactData {
 
   public ContactData withAddress(String address) {
     Address = address;
+    return this;
+  }
+
+  public ContactData withAllPhones(String AllPhones) {
+    this.AllPhones = AllPhones;
     return this;
   }
 
