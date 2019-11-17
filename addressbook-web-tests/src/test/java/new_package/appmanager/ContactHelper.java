@@ -112,12 +112,12 @@ public class ContactHelper extends HelperBase {
     Contacts contacts = new Contacts();
     List<WebElement> elements = wd.findElements(By.xpath("//*[@name='entry']"));
     for (WebElement element : elements) {
-      List<WebElement> cells = element.findElements(By.tagName("td")); //ячейки.
+      List<WebElement> cells = element.findElements(By.tagName("td"));
       String firstname = cells.get(2).getText();
       String lastname = cells.get(1).getText();
       String address = cells.get(3).getText();
       String allEmail = cells.get(4).getText();
-      String allPhones = cells.get(5).getText();
+      String[] allPhones = cells.get(5).getText().split("\n");
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
       contacts.add(new ContactData().withId(id).withFirstName(firstname).withLastName(lastname));
     }
