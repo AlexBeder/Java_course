@@ -9,10 +9,21 @@ public class ContactData {
   public String Address;
   public String HomeTel;
   public String Mobile;
-  private String Work;
+  public String Work;
   public String Email;
   private String group;
 
+  public String getHomeTel() {
+    return HomeTel;
+  }
+
+  public String getMobile() {
+    return Mobile;
+  }
+
+  public String getWork() {
+    return Work;
+  }
 
   public int getId() {
     return id;
