@@ -14,19 +14,20 @@ public class ContactData {
   private String group;
   public String AllPhones;
 
+
   public String getAllPhones() {
     return AllPhones;
   }
 
-  public String getHomeTel() {
+  public String getHomePhone() {
     return HomeTel;
   }
 
-  public String getMobile() {
+  public String getMobilePhone() {
     return Mobile;
   }
 
-  public String getWork() {
+  public String getWorkPhone() {
     return Work;
   }
 

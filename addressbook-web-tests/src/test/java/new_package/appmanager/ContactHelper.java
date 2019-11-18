@@ -118,11 +118,10 @@ public class ContactHelper extends HelperBase {
       String lastname = cells.get(1).getText();
       String address = cells.get(3).getText();
       String allEmail = cells.get(4).getText();
-      String[] phones = cells.get(5).getText().split("\n");
+      String allPhones = cells.get(5).getText();
       int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
       contacts.add(new ContactData().withId(id).withFirstName(firstname).withLastName(lastname)
-              .withAddress(address).withEmail(allEmail)
-              .withHomeTel(phones[0]).withMobile(phones[1]).withWork(phones[2]));
+              .withAddress(address).withEmail(allEmail).withAllPhones(allPhones));
     }
     return contacts;
   }
