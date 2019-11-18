@@ -11,11 +11,30 @@ public class ContactData {
   public String Mobile;
   public String Work;
   public String Email;
+  public String Email2;
+  public String Email3;
   private String group;
   public String AllPhones;
+  public String AllEmails;
 
+  public String getAddress() {
+    return Address;
+  }
 
-  public String getAllPhones() {
+  public String getEmail() {
+    return Email;
+  }
+  public String getEmail2() {
+    return Email2;
+  }
+  public String getEmail3() {
+    return Email3;
+  }
+  public String getAllEmails() {
+    return AllEmails;
+  }
+
+   public String getAllPhones() {
     return AllPhones;
   }
 
@@ -89,7 +108,18 @@ public class ContactData {
     Email = email;
     return this;
   }
-
+  public ContactData withEmail2(String email2) {
+    Email2 = email2;
+    return this;
+  }
+  public ContactData withEmail3(String email3) {
+    Email3 = email3;
+    return this;
+  }
+  public ContactData withAllEmails(String AllEmails) {
+    this.AllEmails = AllEmails;
+    return this;
+  }
   @Override
   public boolean equals(Object o) {
     if (this == o) return true;
