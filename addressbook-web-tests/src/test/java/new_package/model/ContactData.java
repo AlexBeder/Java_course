@@ -13,6 +13,15 @@ public class ContactData {
   public String work;
   public String email;
   public String email2;
+
+  public String getFirstName() {
+    return firstName;
+  }
+
+  public String getLastName() {
+    return lastName;
+  }
+
   public String email3;
   private String group;
   public String allPhones;

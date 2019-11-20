@@ -6,9 +6,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 public class GroupHelper extends HelperBase {
@@ -27,9 +25,9 @@ public class GroupHelper extends HelperBase {
   }
 
   public void fillGroupForm(GroupData groupData) {
-    type(By.name("group_name"), groupData.GroupName);
-    type(By.name("group_header"), groupData.GroupHeader);
-    type(By.name("group_footer"), groupData.GroupFooter);
+    type(By.name("group_name"), groupData.groupName);
+    type(By.name("group_header"), groupData.groupHeader);
+    type(By.name("group_footer"), groupData.groupFooter);
 
   }
 

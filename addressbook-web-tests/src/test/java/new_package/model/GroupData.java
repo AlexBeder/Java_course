@@ -4,15 +4,25 @@ import java.util.Objects;
 
 public class GroupData {
   public int id = Integer.MAX_VALUE;
-  public String GroupName;
-  public String GroupHeader;
-  public String GroupFooter;
+  public String groupName;
+  public String groupHeader;
+  public String groupFooter;
 
   public int getId() {
     return id;
   }
 
+  public String getGroupName() {
+    return groupName;
+  }
 
+  public String getGroupHeader() {
+    return groupHeader;
+  }
+
+  public String getGroupFooter() {
+    return groupFooter;
+  }
 
   public GroupData withId(int id) {
     this.id = id;
@@ -20,17 +30,17 @@ public class GroupData {
   }
 
   public GroupData withGroupName(String groupName) {
-    GroupName = groupName;
+    this.groupName = groupName;
     return this;
   }
 
   public GroupData withGroupHeader(String groupHeader) {
-    GroupHeader = groupHeader;
+    this.groupHeader = groupHeader;
     return this;
   }
 
   public GroupData withGroupFooter(String groupFooter) {
-    GroupFooter = groupFooter;
+    this.groupFooter = groupFooter;
     return this;
   }
 
@@ -38,7 +48,7 @@ public class GroupData {
   public String toString() {
     return "GroupData{" +
             "id='" + id + '\'' +
-            ", GroupName='" + GroupName + '\'' +
+            ", GroupName='" + groupName + '\'' +
             '}';
   }
   @Override
@@ -47,12 +57,12 @@ public class GroupData {
     if (o == null || getClass() != o.getClass()) return false;
     GroupData groupData = (GroupData) o;
     return id == groupData.id &&
-            Objects.equals(GroupName, groupData.GroupName);
+            Objects.equals(groupName, groupData.groupName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, GroupName);
+    return Objects.hash(id, groupName);
   }
 
 }
