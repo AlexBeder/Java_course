@@ -1,53 +1,65 @@
 package new_package.model;
 
+import java.io.File;
 import java.util.Objects;
 
 public class ContactData {
   public int id = Integer.MAX_VALUE;
-  public String FirstName;
-  public String LastName;
-  public String Address;
-  public String HomeTel;
-  public String Mobile;
-  public String Work;
-  public String Email;
-  public String Email2;
-  public String Email3;
+  public String firstName;
+  public String lastName;
+  public String address;
+  public String homeTel;
+  public String mobile;
+  public String work;
+  public String email;
+  public String email2;
+  public String email3;
   private String group;
-  public String AllPhones;
-  public String AllEmails;
+  public String allPhones;
+  public String allEmails;
+
+  public File getPhoto() {
+    return photo;
+  }
+
+  public ContactData withPhoto(File photo) {
+    this.photo = photo;
+    return this;
+  }
+
+  private File photo;
 
   public String getAddress() {
-    return Address;
+    return address;
   }
 
   public String getEmail() {
-    return Email;
+    return email;
   }
   public String getEmail2() {
-    return Email2;
+    return email2;
   }
   public String getEmail3() {
-    return Email3;
+    return email3;
   }
   public String getAllEmails() {
-    return AllEmails;
+    return allEmails;
   }
 
    public String getAllPhones() {
-    return AllPhones;
+    return allPhones;
   }
 
   public String getHomePhone() {
-    return HomeTel;
+    return homeTel;
   }
 
   public String getMobilePhone() {
-    return Mobile;
+    return mobile;
   }
 
   public String getWorkPhone() {
-    return Work;
+    return work;
   }
 
   public int getId() {
@@ -70,54 +82,54 @@ public class ContactData {
   }
 
   public ContactData withFirstName(String firstName) {
-    FirstName = firstName;
+    this.firstName = firstName;
     return this;
   }
 
 
 
   public ContactData withLastName(String lastName) {
-    LastName = lastName;
+    this.lastName = lastName;
     return this;
   }
 
   public ContactData withAddress(String address) {
-    Address = address;
+    this.address = address;
     return this;
   }
 
   public ContactData withAllPhones(String AllPhones) {
-    this.AllPhones = AllPhones;
+    this.allPhones = AllPhones;
     return this;
   }
 
   public ContactData withHomeTel(String homeTel) {
-    HomeTel = homeTel;
+    this.homeTel = homeTel;
     return this;
   }
   public ContactData withMobile(String mobile) {
-    Mobile = mobile;
+    this.mobile = mobile;
     return this;
   }
   public ContactData withWork(String work) {
-    Work = work;
+    this.work = work;
     return this;
   }
 
   public ContactData withEmail(String email) {
-    Email = email;
+    this.email = email;
     return this;
   }
   public ContactData withEmail2(String email2) {
-    Email2 = email2;
+    this.email2 = email2;
     return this;
   }
   public ContactData withEmail3(String email3) {
-    Email3 = email3;
+    this.email3 = email3;
     return this;
   }
   public ContactData withAllEmails(String AllEmails) {
-    this.AllEmails = AllEmails;
+    this.allEmails = AllEmails;
     return this;
   }
   @Override
@@ -126,21 +138,21 @@ public class ContactData {
     if (o == null || getClass() != o.getClass()) return false;
     ContactData that = (ContactData) o;
     return id == that.id &&
-            Objects.equals(FirstName, that.FirstName) &&
-            Objects.equals(LastName, that.LastName);
+            Objects.equals(firstName, that.firstName) &&
+            Objects.equals(lastName, that.lastName);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, FirstName, LastName);
+    return Objects.hash(id, firstName, lastName);
   }
 
   @Override
   public String toString() {
     return "ContactData{" +
             "id='" + id + '\'' +
-            ", FirstName='" + FirstName + '\'' +
-            ", LastName='" + LastName + '\'' +
+            ", FirstName='" + firstName + '\'' +
+            ", LastName='" + lastName + '\'' +
             '}';
   }
 
