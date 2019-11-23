@@ -1,0 +1,29 @@
+<list>
+  <contact>
+    <id>2147483647</id>
+    <firstName>Name 0</firstName>
+    <lastName>familiya 0</lastName>
+    <address>Adres 1</address>
+    <homeTel>704</homeTel>
+    <email>@gmail.com</email>
+    <group>[none]</group>
+  </contact>
+  <contact>
+    <id>2147483647</id>
+    <firstName>Name 1</firstName>
+    <lastName>familiya 1</lastName>
+    <address>Adres 1</address>
+    <homeTel>704</homeTel>
+    <email>@gmail.com</email>
+    <group>[none]</group>
+  </contact>
+  <contact>
+    <id>2147483647</id>
+    <firstName>Name 2</firstName>
+    <lastName>familiya 2</lastName>
+    <address>Adres 1</address>
+    <homeTel>704</homeTel>
+    <email>@gmail.com</email>
+    <group>[none]</group>
+  </contact>
+</list>

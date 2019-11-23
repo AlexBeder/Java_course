@@ -2,7 +2,6 @@ package new_package.tests;
 
 import new_package.model.ContactData;
 import new_package.model.Contacts;
-import new_package.model.GroupData;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -28,6 +27,7 @@ public class ContactCreationTests extends TestBase {
       String[] split = line.split(";");
       list.add(new Object[]{new ContactData().withFirstName(split[0]).withLastName(split[1])
               .withPhoto(photo).withAddress(split[2]).withHomeTel(split[3]).withEmail(split[4]).withGroup(split[5])});
+      line = reader.readLine();
     }
     return list.iterator();
   }
