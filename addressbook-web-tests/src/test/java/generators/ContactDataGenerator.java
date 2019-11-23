@@ -62,10 +62,11 @@ public class ContactDataGenerator {
   }
 
   private List<ContactData> generateContacts(int count) {
+    File photo = new File("src/test/resources/stru.png");
     List<ContactData> contacts = new ArrayList<ContactData>();
     for (int i=0; i<count; i++){
      contacts.add(new ContactData().withFirstName(String.format("Name %s", i))
-             .withLastName(String.format("familiya %s", i)).withAddress(String.format("Adres 1", i))
+             .withLastName(String.format("familiya %s", i)).withPhoto(photo).withAddress(String.format("Adres 1", i))
              .withHomeTel(String.format("704", i))
              .withEmail(String.format("@gmail.com", i)).withGroup(String.format("[none]", i)));
     }

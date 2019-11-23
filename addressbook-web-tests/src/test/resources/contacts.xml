@@ -6,6 +6,7 @@
     <homeTel>704</homeTel>
     <email>@gmail.com</email>
     <group>[none]</group>
+    <photo>src\test\resources\stru.png</photo>
   </contact>
   <contact>
     <firstName>Name 1</firstName>
@@ -14,6 +15,7 @@
     <homeTel>704</homeTel>
     <email>@gmail.com</email>
     <group>[none]</group>
+    <photo>src\test\resources\stru.png</photo>
   </contact>
   <contact>
     <firstName>Name 2</firstName>
@@ -22,5 +24,6 @@
     <homeTel>704</homeTel>
     <email>@gmail.com</email>
     <group>[none]</group>
+    <photo>src\test\resources\stru.png</photo>
   </contact>
 </list>
