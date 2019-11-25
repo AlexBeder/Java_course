@@ -1,9 +1,5 @@
 apply plugin: 'java'
 
-test {
-    useTestNG()
-}
-
 repositories{
     mavenCentral()
 }
@@ -18,3 +14,13 @@ dependencies{
 
 }
 
+task testGroups(type: test) {
+    useTestNG(){
+        suites 'src/test/resources/testng-groups.xml'
+    }
+}
+task testContacts(type: test) {
+    useTestNG(){
+        suites 'src/test/resources/testng-contacts.xml'
+    }
+}
