@@ -8,13 +8,4 @@
             <class name="new_package.tests.GroupDeletionTests" />
         </classes>
     </test>
-
-    <test name="Contacts">
-        <classes>
-            <class name="new_package.tests.ContactCreationTests" />
-            <class name="new_package.tests.ContactAddressEmailPhoneTests" />
-            <class name="new_package.tests.ContactModificationTests" />
-            <class name="new_package.tests.ContactDeletionTests" />
-        </classes>
-    </test>
 </suite>
