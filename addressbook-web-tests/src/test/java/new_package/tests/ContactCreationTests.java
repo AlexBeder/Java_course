@@ -56,11 +56,9 @@ public class ContactCreationTests extends TestBase {
   public void testContactCreation( ContactData contact) throws Exception {
     Contacts before = app.contact().all();
     app.goTo().contactCreation();
-
     app.contact().create(contact);
     Contacts after = app.contact().all();
     assertThat(after.size(), equalTo(before.size() + 1));
-
     before.add(contact);
     assertThat(after, equalTo(
             before.withAdded(contact.withId(after.stream().mapToInt((c) -> c.getId()).max().getAsInt()))));
@@ -68,12 +66,4 @@ public class ContactCreationTests extends TestBase {
     }
 }
 
-
-//String line = reader.readLine();
-//    while (line != null) {
-//      String[] split = line.split(";");
-//      list.add(new Object[]{new ContactData().withFirstName(split[0]).withLastName(split[1])
-//              .withPhoto(photo).withAddress(split[2]).withHomeTel(split[3]).withEmail(split[4]).withGroup(split[5])});
-//      line = reader.readLine();
-//    }
-//    return list.iterator();
+//
