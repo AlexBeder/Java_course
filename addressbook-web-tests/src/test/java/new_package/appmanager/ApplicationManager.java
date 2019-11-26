@@ -1,6 +1,5 @@
 package new_package.appmanager;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
@@ -8,16 +7,15 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.remote.BrowserType;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.Properties;
 import java.util.concurrent.TimeUnit;
 
 public class ApplicationManager {
-  private final Properties properties;
   WebDriver wd;
 
+  private final Properties properties;
   private NavigationHelper navigationHelper;
   private ContactHelper contactHelper;
   private SessionHelper sessionHelper;

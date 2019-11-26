@@ -11,6 +11,7 @@ dependencies{
     implementation 'com.beust:jcommander:1.78'
     implementation 'com.thoughtworks.xstream:xstream:1.4.11.1'
     implementation 'com.google.code.gson:gson:2.8.6'
+    implementation 'mysql:mysql-connector-java:8.0.18'
 
 }
 
@@ -18,10 +19,10 @@ task testGroups(type: Test) {
     useTestNG(){
         suites 'src/test/resources/testng-groups.xml'
     }
-    if (project.hasProperty('browser')){
+    if (project.hasProperty('browser')) {
         systemProperty 'browser', "${browser}"
     }
-    if (project.hasProperty('target')){
+    if (project.hasProperty('target')) {
         systemProperty 'target', "${target}"
     }
 }
@@ -29,10 +30,10 @@ task testContacts(type: Test) {
     useTestNG(){
         suites 'src/test/resources/testng-contacts.xml'
     }
-    if (project.hasProperty('browser')){
+    if (project.hasProperty('browser')) {
         systemProperty 'browser', "${browser}"
     }
-    if (project.hasProperty('target')){
+    if (project.hasProperty('target')) {
         systemProperty 'target', "${target}"
     }
 
