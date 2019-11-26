@@ -22,9 +22,10 @@ public class ApplicationManager {
   private GroupHelper groupHelper;
   private String browser;
 
-  public ApplicationManager(String browser) throws IOException {
-    this.browser = browser;
+  public ApplicationManager(String browser) {
     properties = new Properties();
+    this.browser = browser;
+
   }
 
 
