@@ -1,10 +1,10 @@
 package new_package.tests;
 
+import new_package.model.GroupData;
+import new_package.model.Groups;
 import org.testng.annotations.Test;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class DbConnectionTest {
 
@@ -13,6 +13,17 @@ public class DbConnectionTest {
     Connection conn = null;
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost/addressbook?user=root&password=");
+      Statement st = conn.createStatement();
+      ResultSet rs = st.executeQuery("select group_id, group_name, group_header, group_footer from group_list");
+      Groups groups = new Groups();
+      while (rs.next()){
+        groups.add(new GroupData().withId(rs.getInt("group_id")).withGroupName(rs.getString("group_name"))
+                .withGroupHeader(rs.getString("Group_header")).withGroupFooter(rs.getString("group_footer")));
+      }
+      rs.close();
+      st.close();
+      conn.close();
+      System.out.println(groups);
     } catch (SQLException ex) {
       // handle any errors
       System.out.println("SQLException: " + ex.getMessage());
