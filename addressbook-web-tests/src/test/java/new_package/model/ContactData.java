@@ -68,8 +68,9 @@ public class ContactData {
   @Transient
   public String allEmails;
 
-  @Column(name = "photo")
-  @Type(type = "text")
+ // @Column(name = "photo")
+ // @Type(type = "text")
+ @Transient
   private String photo;
 
 
