@@ -4,6 +4,8 @@
     <bytecodeTargetLevel>
       <module name="head-.main" target="1.8" />
       <module name="head-.test" target="1.8" />
+      <module name="head-first-java.main" target="1.8" />
+      <module name="head-first-java.test" target="1.8" />
       <module name="untitled.main" target="1.8" />
       <module name="untitled.test" target="1.8" />
     </bytecodeTargetLevel>

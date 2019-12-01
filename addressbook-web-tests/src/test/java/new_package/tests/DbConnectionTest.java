@@ -9,7 +9,7 @@ import java.sql.*;
 public class DbConnectionTest {
 
   @Test
-  public void testDbConnection() {
+  public void testDbConnectionGroup() {
     Connection conn = null;
     try {
       conn = DriverManager.getConnection("jdbc:mysql://localhost/addressbook?user=root&password=");
@@ -32,4 +32,6 @@ public class DbConnectionTest {
     }
 
   }
+
+
 }
