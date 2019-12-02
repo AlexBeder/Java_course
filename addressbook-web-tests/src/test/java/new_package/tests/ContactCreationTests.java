@@ -6,6 +6,7 @@ import com.thoughtworks.xstream.XStream;
 import new_package.model.ContactData;
 import new_package.model.Contacts;
 import new_package.model.GroupData;
+import new_package.model.Groups;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 

@@ -2,6 +2,7 @@ package new_package.appmanager;
 
 import new_package.model.ContactData;
 import new_package.model.Contacts;
+import new_package.model.Groups;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -32,6 +33,7 @@ public class ContactHelper extends HelperBase {
 
 
   public void fillContactForm(ContactData contactData, boolean creation) {
+    Groups groups = app.db().groups();
     type(By.name("firstname"), contactData.firstName);
     type(By.name("lastname"), contactData.lastName);
     attach(By.name("photo"),contactData.getPhoto());
@@ -39,9 +41,12 @@ public class ContactHelper extends HelperBase {
     type(By.name("home"), contactData.homeTel);
     type(By.name("email"), contactData.email);
 
-    if (creation) {
-      new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(contactData.getGroup());
-    } else {
+   if (creation) {
+     if (contactData.getGroups().size() > 0) {
+       Assert.assertTrue(contactData.getGroups().size() == 1);
+       new Select(wd.findElement(By.name("new_group"))).selectByVisibleText(String.valueOf(contactData.getGroups().iterator().next()));
+     }
+     } else {
       Assert.assertFalse(isElementPresent(By.name("new_group")));
     }
 
@@ -140,43 +145,4 @@ public class ContactHelper extends HelperBase {
     }
     return contacts;
   }
-
-
-
 }
-//OLD Code:
-
-//public void initEditContact(int index) {
-//
-//   wd.findElements(By.cssSelector("img[alt=\"Edit\"]")).get(index).click();
-//  }
-
-//  public int getContactCount() {
-//    return wd.findElements(By.name("selected[]")).size();
-//  }
-
-//  public void delete(int index) {
-//    selectContact(index);
-//    initContactDeletion();
-//    confirmDeletion();
-//  }
-
-//  public void selectContact(int index) {
-//    wd.findElements(By.name("selected[]")).get(index).click();
-//  }
-
-
-//public Set<ContactData> allSet() {
-//    Set<ContactData> contacts = new HashSet<ContactData>();
-//    List<WebElement> elements = wd.findElements(By.xpath("//*[@name='entry']"));
-//    for (WebElement element : elements){
-//      String firstname = element.findElement(By.xpath(".//td[3]")).getText();
-//      String lastname = element.findElement(By.xpath(".//td[2]")).getText();
-//      String[] phones = element.findElement(By.xpath(".//td[6]")).getText().split("\n");
-//      int id = Integer.parseInt(element.findElement(By.tagName("input")).getAttribute("value"));
-//      contacts.add(new ContactData().withId(id).withFirstName(firstname).withLastName(lastname)
-//              .withHomeTel(phones[0]).withMobile(phones[1]).withWork(phones[2]));
-//    }
-//    return contacts;
-//  }
-//}

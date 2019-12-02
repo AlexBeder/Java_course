@@ -2,6 +2,7 @@ package new_package.tests;
 
 import new_package.model.ContactData;
 import new_package.model.Contacts;
+import new_package.model.Groups;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -13,9 +14,10 @@ import static org.hamcrest.Matchers.equalTo;
 public class ContactModificationTests extends TestBase {
   @BeforeMethod
   public void ensurePreconditions(){
+    Groups groups = app.db().groups();
     if (app.contact().list().size() == 0) {
-      app.contact().createContact(new ContactData()
-              .withFirstName("Name").withLastName("Familiya").withAddress("Adres").withHomeTel("704").withEmail("@gmail.com").withGroup("[none]"), true);
+      app.contact().createContact((ContactData) new ContactData()
+              .withFirstName("Name").withLastName("Familiya").withAddress("Adres").withHomeTel("704").withEmail("@gmail.com").withGroups(groups), true);
     }
   }
 
