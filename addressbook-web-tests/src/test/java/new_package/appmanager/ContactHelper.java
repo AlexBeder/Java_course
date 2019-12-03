@@ -2,6 +2,7 @@ package new_package.appmanager;
 
 import new_package.model.ContactData;
 import new_package.model.Contacts;
+import new_package.model.GroupData;
 import new_package.model.Groups;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
@@ -88,6 +89,16 @@ public class ContactHelper extends HelperBase {
     updateContactForm();
     gotoHomePage();
   }
+  public void addContactToGroup(ContactData contact) {
+   // Groups groups = app.db().groups();
+    selectContactById(contact.getId());
+    Select addToGroup = new Select(wd.findElement(By.xpath("//*[@id=\"content\"]/form[2]/div[4]/select")));
+    addToGroup.selectByIndex(1);
+    // addToGroup.selectByVisibleText(String.valueOf(contact.getGroups().iterator().next()));
+    wd.findElement(By.name("add")).click();
+    wd.findElement(By.linkText("home")).click();
+
+  }
 
   public void delete(ContactData contact) {
     selectContactById(contact.getId());
@@ -145,4 +156,6 @@ public class ContactHelper extends HelperBase {
     }
     return contacts;
   }
+
+
 }

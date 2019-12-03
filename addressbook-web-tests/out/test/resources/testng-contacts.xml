@@ -5,7 +5,7 @@
         <classes>
             <class name="new_package.tests.ContactCreationTests" />
             <class name="new_package.tests.ContactAddressEmailPhoneTests" />
-            <class name="new_package.tests.ContactModificationTests" />
+            <class name="new_package.tests.testContactInGroup" />
             <class name="new_package.tests.ContactDeletionTests" />
         </classes>
     </test>
