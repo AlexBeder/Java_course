@@ -21,9 +21,8 @@ public class ApplicationManager {
 
 
   public ApplicationManager(String browser) {
-    properties = new Properties();
     this.browser = browser;
-
+    properties = new Properties();
   }
 
 
@@ -46,4 +45,11 @@ public class ApplicationManager {
     wd.quit();
   }
 
+  public HttpSession newSession(){
+    return new HttpSession(this);
+  }
+
+  public String getProperty(String key) {
+    return properties.getProperty(key);
+  }
 }
