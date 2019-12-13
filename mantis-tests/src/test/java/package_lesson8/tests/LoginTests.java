@@ -1,6 +1,5 @@
 package package_lesson8.tests;
 
-import org.testng.Assert;
 import org.testng.annotations.Test;
 import package_lesson8.appmanager.HttpSession;
 
