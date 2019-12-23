@@ -13,6 +13,7 @@ dependencies{
     implementation 'com.google.code.gson:gson:2.8.6'
     implementation 'mysql:mysql-connector-java:8.0.18'
     implementation 'org.hibernate:hibernate-core:5.4.9.Final'
+    implementation 'org.robotframework:robotframework:3.1.2'
 
 }
 
@@ -49,5 +50,11 @@ task testContacts(type: Test) {
     if (project.hasProperty('verifyUI')) {
         systemProperty 'verifyUI', "${verifyUI}"
     }
+}
 
+task robotFramework(type: JavaExec) {
+    main = 'org.robotframework.RobotFramework'
+    classpath = sourceSets.test.runtimeClasspath()
+    args '--outputdir', 'build/rf-report/'
+    args 'src/test/resources/robotFramework'
 }
