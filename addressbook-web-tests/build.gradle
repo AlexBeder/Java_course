@@ -54,7 +54,7 @@ task testContacts(type: Test) {
 
 task robotFramework(type: JavaExec) {
     main = 'org.robotframework.RobotFramework'
-    classpath = sourceSets.test.runtimeClasspath()
+    classpath = sourceSets.test.runtimeClasspath
     args '--outputdir', 'build/rf-report/'
     args 'src/test/resources/robotFramework'
 }
