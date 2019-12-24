@@ -2,7 +2,6 @@ package new_package.tests;
 
 import new_package.model.GroupData;
 import new_package.model.Groups;
-import org.hamcrest.CoreMatchers;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -14,7 +13,7 @@ public class GroupModificationTests extends TestBase {
   @BeforeMethod
   public void ensurePreconditions() {
     if (app.db().groups().size() == 0){
-      app.goTo().GroupPage();
+      app.goTo().groupPage();
       app.group().create(new GroupData().withGroupName("Test1"));
     }
   }
@@ -25,7 +24,7 @@ public class GroupModificationTests extends TestBase {
     GroupData modifiedGroup = before.iterator().next();
     GroupData group = new GroupData()
             .withId(modifiedGroup.getId()).withGroupName("Testik").withGroupHeader("testik2").withGroupFooter("Testik3");
-    app.goTo().GroupPage();
+    app.goTo().groupPage();
     app.group().modify(group);
     assertThat(app.group().count(), equalTo(before.size()));
     Groups after = app.db().groups();

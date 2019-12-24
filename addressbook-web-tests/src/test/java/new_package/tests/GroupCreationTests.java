@@ -52,7 +52,7 @@ public class GroupCreationTests extends TestBase {
   }
   @Test (dataProvider = "validGroupsFromJson")
   public void testGroupCreation(GroupData group) throws Exception {
-      app.goTo().GroupPage();
+      app.goTo().groupPage();
       Groups before = app.db().groups();
       app.group().create(group);
       Groups after = app.db().groups();
@@ -67,7 +67,7 @@ public class GroupCreationTests extends TestBase {
   }
   @Test
   public void testBadGroupCreation() throws Exception {
-    app.goTo().GroupPage();
+    app.goTo().groupPage();
     Groups before = app.db().groups();
 
     GroupData group = new GroupData().withGroupName("Test1'1");

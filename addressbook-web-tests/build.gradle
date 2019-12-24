@@ -14,7 +14,8 @@ dependencies{
     implementation 'mysql:mysql-connector-java:8.0.18'
     implementation 'org.hibernate:hibernate-core:5.4.9.Final'
     implementation 'org.robotframework:robotframework:3.1.2'
-
+    implementation 'info.cukes:cucumber-java:1.2.6'
+    implementation 'info.cukes:cucumber-testng:1.2.6'
 }
 
 task testGroups(type: Test) {

@@ -21,7 +21,7 @@ public class ContactInGroupTests extends TestBase {
               .withFirstName("Name").withLastName("Familiya").withAddress("Adres").withHomeTel("704").withEmail("@gmail.com").withGroups(groups), true);
     }
     if (app.db().groups().size() == 0){
-      app.goTo().GroupPage();
+      app.goTo().groupPage();
       app.group().create(new GroupData().withGroupName("Test1"));
     }
   }

@@ -5,7 +5,6 @@ import new_package.model.GroupData;
 import org.openqa.selenium.remote.BrowserType;
 
 import java.io.IOException;
-import java.security.PublicKey;
 
 public class AddressbookKeywords {
 
@@ -24,12 +23,12 @@ public class AddressbookKeywords {
   }
 
   public int getGroupCount(){
-    app.goTo().GroupPage();
+    app.goTo().groupPage();
     return app.group().count();
   }
 
   public void createGroup(String name, String header, String footer){
-    app.goTo().GroupPage();
+    app.goTo().groupPage();
     app.group().create(new GroupData().withGroupName(name).withGroupHeader(header).withGroupFooter(footer));
   }
 }
